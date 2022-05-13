@@ -14,5 +14,5 @@ class PFAMLayer(nn.Module):
         b, c, _, _ = x.size()
         y = self.avg_pool(x).view(b, c)
         z = torch.mean(x,1)
-        return self.sigmoid(y*z)
+        return x * self.sigmoid(y*z)
     
