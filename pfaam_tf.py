@@ -4,7 +4,7 @@ from tensorflow.keras.layers import  Activation,  Lambda,  Reshape
 from tensorflow.keras import backend as K
 import tensorflow as tf
 
-def pfam(x):
+def PfAAM(x):
     keep = x
     channel_act = GlobalAveragePooling2D()(x)
     spatial_act = Lambda(AveragePoolChannels)(x)
@@ -13,7 +13,7 @@ def pfam(x):
     res = multiply([keep,y])
     return res
     
-def pfam_MAX(x):
+def PfAAM_MAX(x):
     keep = x
     channel_act = GlobalMaxPooling2D()(x)
     spatial_act = Lambda(MaxPoolChannels)(x)
