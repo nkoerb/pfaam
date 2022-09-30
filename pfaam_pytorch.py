@@ -4,9 +4,9 @@
 from torch import nn
 
 
-class PFAMLayer(nn.Module):
+class PfAAMLayer(nn.Module):
     def __init__(self):
-        super(AutoAttentionLayer, self).__init__()
+        super(PfAAMLayer, self).__init__()
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
         self.sigmoid = nn.Sigmoid()
 
