@@ -21,7 +21,6 @@ def PfAAM_MAX(x):
     y = Activation("sigmoid")(y)
     res = multiply([keep,y])
     return res
-
    
 def MatMul(x):
     y = x[0]
