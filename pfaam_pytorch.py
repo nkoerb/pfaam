@@ -1,8 +1,4 @@
-
-
-
 from torch import nn
-
 
 class PfAAMLayer(nn.Module):
     def __init__(self):
