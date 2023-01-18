@@ -4,8 +4,10 @@ from tensorflow.keras.layers import  Activation,  Lambda,  Reshape
 from tensorflow.keras import backend as K
 import tensorflow as tf
 
-def PfAAM(x):
+def PfAAM(x, use_bn=True):
     keep = x
+    if use_bn:
+        x = BatchNormalization()(x)
     channel_act = GlobalAveragePooling2D()(x)
     spatial_act = Lambda(AveragePoolChannels)(x)
     y = Lambda(MatMul)([spatial_act,channel_act])
